@@ -47,16 +47,16 @@ export const CrossSell = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {tools.map((tool, index) => (
-            <Card key={index} className="p-6 shadow-soft transition-smooth hover:shadow-medium hover:-translate-y-1">
+            <Card key={index} className="p-6 shadow-soft transition-smooth hover:shadow-medium hover:-translate-y-1 flex flex-col">
               <div className="inline-flex items-center justify-center w-20 h-20 rounded-lg mb-4">
                 <img src={tool.logo} alt={tool.title} className="w-full h-full object-contain" />
               </div>
               <h3 className="text-lg font-bold mb-2">{tool.title}</h3>
-              <p className="text-muted-foreground text-sm mb-4">{tool.description}</p>
+              <p className="text-muted-foreground text-sm mb-4 flex-grow">{tool.description}</p>
               <Button 
                 variant="outline" 
                 size="sm" 
-                className="w-full"
+                className="w-full mt-auto"
                 onClick={() => window.open(tool.url, '_blank')}
               >
                 Try Now
@@ -73,7 +73,11 @@ export const CrossSell = () => {
             <p className="mb-6 opacity-90">
               Explore OmegaTheme's powerful Shopify apps and premium tools
             </p>
-            <Button size="lg" variant="secondary">
+            <Button 
+              size="lg" 
+              variant="secondary"
+              onClick={() => window.open('https://apps.shopify.com/partners/omegaapps', '_blank')}
+            >
               Explore All Tools
             </Button>
           </Card>
