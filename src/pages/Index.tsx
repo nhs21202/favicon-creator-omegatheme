@@ -4,7 +4,6 @@ import { Features } from "@/components/sections/Features";
 import { FormatExplainer } from "@/components/sections/FormatExplainer";
 import { FAQ } from "@/components/sections/FAQ";
 import { CrossSell } from "@/components/sections/CrossSell";
-import { MoreTools } from "@/components/sections/MoreTools";
 import { Footer } from "@/components/sections/Footer";
 import { Header } from "@/components/sections/Header";
 
@@ -19,7 +18,6 @@ const Index = () => {
         <FormatExplainer />
         <FAQ />
         <CrossSell />
-        <MoreTools />
       </main>
       <Footer />
     </div>

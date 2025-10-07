@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/omegatheme-logo.png";
 
 export const Header = () => {
   return (
@@ -6,9 +7,7 @@ export const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-2xl font-bold">
-              OMEGA<span className="text-primary">THEME</span>
-            </span>
+            <img src={logo} alt="OmegaTheme" className="h-8" />
           </div>
           <nav className="hidden md:flex items-center gap-6">
             <a href="#" className="text-sm font-medium transition-smooth hover:text-primary">

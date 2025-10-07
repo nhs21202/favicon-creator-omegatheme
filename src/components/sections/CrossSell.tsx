@@ -1,28 +1,35 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Image, FileJson, Palette, Code } from "lucide-react";
+import trustifyLogo from "@/assets/trustify-logo.png";
+import googleReviewsLogo from "@/assets/google-reviews-logo.png";
+import shoppableVideoLogo from "@/assets/shoppable-video-logo.png";
+import etsyReviewsLogo from "@/assets/etsy-reviews-logo.png";
 
 export const CrossSell = () => {
   const tools = [
     {
-      icon: Image,
-      title: "Image Resizer",
-      description: "Resize images to any dimension while maintaining quality and aspect ratio."
+      logo: trustifyLogo,
+      title: "Trustify: Testimonial Reviews",
+      description: "Drive sales with visual customer reviews from Amazon & Ali",
+      url: "https://apps.shopify.com/trustify"
     },
     {
-      icon: FileJson,
-      title: "JSON Formatter",
-      description: "Format and validate JSON data with syntax highlighting and error detection."
+      logo: googleReviewsLogo,
+      title: "Google Reviews by Trustify",
+      description: "Display Google Reviews & Get Reviews via Google Review Opt-in",
+      url: "https://apps.shopify.com/google-reviews-importer"
     },
     {
-      icon: Palette,
-      title: "Color Picker",
-      description: "Extract colors from images and create beautiful color palettes instantly."
+      logo: shoppableVideoLogo,
+      title: "Trustify: Shoppable Video UGC",
+      description: "Embed Tiktok, Youtube, Vimeo videos on your storefront",
+      url: "https://apps.shopify.com/related-videos-by-omega"
     },
     {
-      icon: Code,
-      title: "Meta Tag Generator",
-      description: "Generate SEO-friendly meta tags for your website in seconds."
+      logo: etsyReviewsLogo,
+      title: "Etsy Reviews Importer",
+      description: "Strengthen store trust with authentic Etsy photo reviews",
+      url: "https://apps.shopify.com/etsy-reviews-importer"
     }
   ];
 
@@ -41,12 +48,17 @@ export const CrossSell = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {tools.map((tool, index) => (
             <Card key={index} className="p-6 shadow-soft transition-smooth hover:shadow-medium hover:-translate-y-1">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-accent/10 mb-4">
-                <tool.icon className="w-6 h-6 text-accent" />
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-lg mb-4">
+                <img src={tool.logo} alt={tool.title} className="w-full h-full object-contain" />
               </div>
               <h3 className="text-lg font-bold mb-2">{tool.title}</h3>
               <p className="text-muted-foreground text-sm mb-4">{tool.description}</p>
-              <Button variant="outline" size="sm" className="w-full">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="w-full"
+                onClick={() => window.open(tool.url, '_blank')}
+              >
                 Try Now
               </Button>
             </Card>
