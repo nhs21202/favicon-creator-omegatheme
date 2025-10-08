@@ -41,7 +41,7 @@ export const CrossSell = () => {
             Try More OmegaTheme Tools
           </h2>
           <p className="text-lg text-muted-foreground">
-            Discover our collection of free online tools for developers and designers
+            Cross-sell recommendations: Discover related tools and apps to enhance your store
           </p>
         </header>
 
