@@ -33,17 +33,34 @@ export const FAQ = () => {
     }
   ];
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
-    <section className="py-20 px-4 gradient-hero">
+    <section className="py-20 px-4 gradient-hero" itemScope itemType="https://schema.org/FAQPage">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       <div className="container mx-auto max-w-4xl">
-        <div className="text-center mb-12">
+        <header className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Favicon Generator FAQ
+            Frequently Asked Questions
           </h2>
           <p className="text-lg text-muted-foreground">
             Everything you need to know about creating favicons
           </p>
-        </div>
+        </header>
 
         <Accordion type="single" collapsible className="space-y-4">
           {faqs.map((faq, index) => (
@@ -51,12 +68,20 @@ export const FAQ = () => {
               key={index}
               value={`item-${index}`}
               className="bg-card rounded-lg px-6 shadow-soft"
+              itemScope
+              itemProp="mainEntity"
+              itemType="https://schema.org/Question"
             >
               <AccordionTrigger className="text-left font-semibold hover:text-primary">
-                {faq.question}
+                <span itemProp="name">{faq.question}</span>
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground leading-relaxed">
-                {faq.answer}
+              <AccordionContent 
+                className="text-muted-foreground leading-relaxed"
+                itemScope
+                itemProp="acceptedAnswer"
+                itemType="https://schema.org/Answer"
+              >
+                <div itemProp="text">{faq.answer}</div>
               </AccordionContent>
             </AccordionItem>
           ))}

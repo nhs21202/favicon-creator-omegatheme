@@ -34,25 +34,33 @@ export const CrossSell = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-background">
+    <section className="py-20 px-4 bg-background" itemScope itemType="https://schema.org/ItemList">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-12">
+        <header className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Try More OmegaTheme Tools
           </h2>
           <p className="text-lg text-muted-foreground">
             Discover our collection of free online tools for developers and designers
           </p>
-        </div>
+        </header>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {tools.map((tool, index) => (
-            <Card key={index} className="p-6 shadow-soft transition-smooth hover:shadow-medium hover:-translate-y-1 flex flex-col">
+            <Card 
+              key={index} 
+              className="p-6 shadow-soft transition-smooth hover:shadow-medium hover:-translate-y-1 flex flex-col"
+              itemScope
+              itemProp="itemListElement"
+              itemType="https://schema.org/SoftwareApplication"
+            >
+              <meta itemProp="position" content={String(index + 1)} />
               <div className="inline-flex items-center justify-center w-20 h-20 rounded-lg mb-4">
-                <img src={tool.logo} alt={tool.title} className="w-full h-full object-contain" />
+                <img src={tool.logo} alt={tool.title} className="w-full h-full object-contain" itemProp="image" />
               </div>
-              <h3 className="text-lg font-bold mb-2">{tool.title}</h3>
-              <p className="text-muted-foreground text-sm mb-4 flex-grow">{tool.description}</p>
+              <h3 className="text-lg font-bold mb-2" itemProp="name">{tool.title}</h3>
+              <p className="text-muted-foreground text-sm mb-4 flex-grow" itemProp="description">{tool.description}</p>
+              <link itemProp="url" href={tool.url} />
               <Button 
                 variant="outline" 
                 size="sm" 
