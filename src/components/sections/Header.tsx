@@ -30,7 +30,10 @@ export const Header = () => {
               Support
               <ChevronDown className="w-3 h-3" />
             </a>
-            <Button className="bg-foreground hover:bg-foreground/90 text-background rounded-md px-6">
+            <Button 
+              className="bg-foreground hover:bg-foreground/90 text-background rounded-md px-6"
+              onClick={() => window.open('https://www.shopify.com/free-trial?utm_source=3447663-impact&utm_medium=cpa&irclickid=wKVWISUo6xycRkmWlC0EAxtPUkp3KF3Nd0CGSA0&irgwc=1&partner=3447663&affpt=excluded&utm_channel=affiliates&iradid=1061744', '_blank')}
+            >
               Start Shopify Trial
             </Button>
           </nav>
