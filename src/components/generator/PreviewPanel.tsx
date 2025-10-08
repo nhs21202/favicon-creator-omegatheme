@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { Download, Share2 } from "lucide-react";
+import { Download } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
+import { useState } from "react";
 
 interface PreviewPanelProps {
   favicon: string;
@@ -8,6 +10,7 @@ interface PreviewPanelProps {
 
 export const PreviewPanel = ({ favicon }: PreviewPanelProps) => {
   const sizes = [16, 32, 48, 64, 128];
+  const [selectedSize, setSelectedSize] = useState<number>(64);
 
   const downloadFavicon = (size: number, format: string) => {
     const canvas = document.createElement("canvas");
@@ -41,24 +44,11 @@ export const PreviewPanel = ({ favicon }: PreviewPanelProps) => {
     toast.success("Downloading all sizes...");
   };
 
-  const handleShare = async () => {
-    try {
-      await navigator.clipboard.writeText(window.location.href);
-      toast.success("Link copied to clipboard!");
-    } catch (err) {
-      toast.error("Failed to copy link");
-    }
-  };
-
   return (
     <div className="mt-8 border-t pt-8">
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-xl font-bold">Preview</h3>
         <div className="flex gap-2">
-          <Button variant="outline" size="sm" onClick={handleShare}>
-            <Share2 className="w-4 h-4 mr-2" />
-            Share
-          </Button>
           <Button size="sm" onClick={downloadAll} className="gradient-primary">
             <Download className="w-4 h-4 mr-2" />
             Download All
@@ -82,31 +72,49 @@ export const PreviewPanel = ({ favicon }: PreviewPanelProps) => {
         ))}
       </div>
 
-      <div className="grid md:grid-cols-3 gap-4">
-        <Button
-          variant="outline"
-          onClick={() => downloadFavicon(64, "png")}
-          className="w-full"
-        >
-          <Download className="w-4 h-4 mr-2" />
-          Download PNG
-        </Button>
-        <Button
-          variant="outline"
-          onClick={() => downloadFavicon(64, "ico")}
-          className="w-full"
-        >
-          <Download className="w-4 h-4 mr-2" />
-          Download ICO
-        </Button>
-        <Button
-          variant="outline"
-          onClick={() => downloadFavicon(64, "svg")}
-          className="w-full"
-        >
-          <Download className="w-4 h-4 mr-2" />
-          Download SVG
-        </Button>
+      <div className="space-y-4">
+        <div className="flex items-center gap-4">
+          <label className="text-sm font-medium">Select Size:</label>
+          <Select value={selectedSize.toString()} onValueChange={(val) => setSelectedSize(Number(val))}>
+            <SelectTrigger className="w-32">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {sizes.map((size) => (
+                <SelectItem key={size} value={size.toString()}>
+                  {size}x{size}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-4">
+          <Button
+            variant="outline"
+            onClick={() => downloadFavicon(selectedSize, "png")}
+            className="w-full"
+          >
+            <Download className="w-4 h-4 mr-2" />
+            Download PNG
+          </Button>
+          <Button
+            variant="outline"
+            onClick={() => downloadFavicon(selectedSize, "ico")}
+            className="w-full"
+          >
+            <Download className="w-4 h-4 mr-2" />
+            Download ICO
+          </Button>
+          <Button
+            variant="outline"
+            onClick={() => downloadFavicon(selectedSize, "svg")}
+            className="w-full"
+          >
+            <Download className="w-4 h-4 mr-2" />
+            Download SVG
+          </Button>
+        </div>
       </div>
     </div>
   );

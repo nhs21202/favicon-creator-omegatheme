@@ -180,9 +180,11 @@ export const EmojiGenerator = ({ onGenerate }: EmojiGeneratorProps) => {
         </div>
       </div>
 
-      <Button onClick={handleGenerate} className="w-full gradient-primary" size="lg">
-        Generate Favicon
-      </Button>
+      <div className="flex justify-center">
+        <Button onClick={handleGenerate} className="gradient-primary px-12" size="lg">
+          Generate Favicon
+        </Button>
+      </div>
     </div>
   );
 };
