@@ -56,7 +56,7 @@ export const CrossSell = () => {
               <Button 
                 variant="outline" 
                 size="sm" 
-                className="w-full mt-auto"
+                className="w-full mt-auto hover:bg-foreground hover:text-background"
                 onClick={() => window.open(tool.url, '_blank')}
               >
                 Try Now
@@ -66,7 +66,7 @@ export const CrossSell = () => {
         </div>
 
         <div className="text-center">
-          <Card className="gradient-primary p-8 shadow-medium text-primary-foreground">
+          <Card className="gradient-shopify p-8 shadow-medium text-foreground">
             <h3 className="text-2xl font-bold mb-2">
               Need Advanced Website Tools?
             </h3>
@@ -75,7 +75,7 @@ export const CrossSell = () => {
             </p>
             <Button 
               size="lg" 
-              variant="secondary"
+              className="bg-foreground text-background hover:bg-foreground/90"
               onClick={() => window.open('https://apps.shopify.com/partners/omegaapps', '_blank')}
             >
               Explore All Tools

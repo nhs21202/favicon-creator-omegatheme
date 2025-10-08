@@ -26,8 +26,8 @@ All colors MUST be HSL.
     --muted: 220 14% 96%;
     --muted-foreground: 215 16% 47%;
 
-    --accent: 16 100% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 158 100% 57%;
+    --accent-foreground: 0 0% 0%;
 
     --success: 142 71% 45%;
     --success-foreground: 0 0% 100%;
@@ -37,12 +37,13 @@ All colors MUST be HSL.
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 209 100% 45%;
+    --ring: 158 100% 57%;
 
     --radius: 0.75rem;
     
-    --gradient-primary: linear-gradient(135deg, hsl(209 100% 45%), hsl(209 100% 35%));
+    --gradient-primary: linear-gradient(96.68deg, hsl(158 100% 57%) 6.28%, hsl(165 62% 50%) 92.76%);
     --gradient-hero: linear-gradient(180deg, hsl(220 14% 98%), hsl(220 14% 96%));
+    --gradient-shopify: linear-gradient(96.68deg, hsl(158 100% 57%) 6.28%, hsl(165 62% 50%) 92.76%);
     --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.05);
     --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.08);
     --transition-smooth: all 0.3s ease;
@@ -83,8 +84,8 @@ All colors MUST be HSL.
     --muted: 217 25% 20%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 16 100% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 158 100% 57%;
+    --accent-foreground: 0 0% 0%;
 
     --success: 142 71% 45%;
     --success-foreground: 0 0% 100%;
@@ -94,10 +95,11 @@ All colors MUST be HSL.
 
     --border: 217 25% 25%;
     --input: 217 25% 25%;
-    --ring: 209 100% 50%;
+    --ring: 158 100% 57%;
     
-    --gradient-primary: linear-gradient(135deg, hsl(209 100% 45%), hsl(209 100% 35%));
+    --gradient-primary: linear-gradient(96.68deg, hsl(158 100% 57%) 6.28%, hsl(165 62% 50%) 92.76%);
     --gradient-hero: linear-gradient(180deg, hsl(217 30% 15%), hsl(217 25% 18%));
+    --gradient-shopify: linear-gradient(96.68deg, hsl(158 100% 57%) 6.28%, hsl(165 62% 50%) 92.76%);
     --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.2);
     --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.3);
   }
@@ -121,6 +123,10 @@ All colors MUST be HSL.
 @layer utilities {
   .gradient-primary {
     background: var(--gradient-primary);
+  }
+  
+  .gradient-shopify {
+    background: var(--gradient-shopify);
   }
   
   .gradient-hero {

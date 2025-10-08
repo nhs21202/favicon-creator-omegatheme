@@ -181,7 +181,7 @@ export const EmojiGenerator = ({ onGenerate }: EmojiGeneratorProps) => {
       </div>
 
       <div className="flex justify-center">
-        <Button onClick={handleGenerate} className="gradient-primary px-12" size="lg">
+        <Button onClick={handleGenerate} className="gradient-shopify px-12" size="lg">
           Generate Favicon
         </Button>
       </div>

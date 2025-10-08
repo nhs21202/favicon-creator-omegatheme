@@ -13,24 +13,24 @@ export const Header = () => {
             </a>
           </div>
           <nav className="hidden md:flex items-center gap-6">
-            <a href="https://omegatheme.com" className="text-sm font-medium text-primary transition-smooth hover:text-primary/80">
+            <a href="https://omegatheme.com" className="text-sm font-medium text-accent transition-smooth hover:text-accent/80">
               Home
             </a>
-            <a href="https://omegatheme.com/services" className="text-sm font-medium transition-smooth hover:text-primary">
+            <a href="https://omegatheme.com/services" className="text-sm font-medium transition-smooth hover:text-accent">
               Services
             </a>
-            <a href="https://omegatheme.com/blog" className="text-sm font-medium transition-smooth hover:text-primary">
+            <a href="https://omegatheme.com/blog" className="text-sm font-medium transition-smooth hover:text-accent">
               Blog
             </a>
-            <a href="https://omegatheme.com/about" className="text-sm font-medium transition-smooth hover:text-primary flex items-center gap-1">
+            <a href="https://omegatheme.com/about" className="text-sm font-medium transition-smooth hover:text-accent flex items-center gap-1">
               About Us
               <ChevronDown className="w-3 h-3" />
             </a>
-            <a href="https://omegatheme.com/support" className="text-sm font-medium transition-smooth hover:text-primary flex items-center gap-1">
+            <a href="https://omegatheme.com/support" className="text-sm font-medium transition-smooth hover:text-accent flex items-center gap-1">
               Support
               <ChevronDown className="w-3 h-3" />
             </a>
-            <Button className="bg-[#2c3e50] hover:bg-[#34495e] text-white rounded-md px-6">
+            <Button className="bg-foreground hover:bg-foreground/90 text-background rounded-md px-6">
               Start Shopify Trial
             </Button>
           </nav>
