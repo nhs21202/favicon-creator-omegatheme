@@ -38,7 +38,7 @@ export const CrossSell = () => {
       <div className="container mx-auto max-w-6xl">
         <header className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Try More OmegaTheme Apps and Tools
+            Related Apps & Tools from OmegaTheme
           </h2>
           <p className="text-lg text-muted-foreground">
             Cross-sell recommendations: Discover related tools and apps to enhance your store
