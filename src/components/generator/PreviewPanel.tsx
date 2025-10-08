@@ -49,7 +49,7 @@ export const PreviewPanel = ({ favicon }: PreviewPanelProps) => {
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-xl font-bold">Preview</h3>
         <div className="flex gap-2">
-          <Button size="sm" onClick={downloadAll} className="gradient-shopify">
+          <Button size="sm" onClick={downloadAll} className="gradient-shopify text-foreground">
             <Download className="w-4 h-4 mr-2" />
             Download All
           </Button>

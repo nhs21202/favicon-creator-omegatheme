@@ -186,7 +186,7 @@ export const TextGenerator = ({ onGenerate }: TextGeneratorProps) => {
       </div>
 
       <div className="flex justify-center">
-        <Button onClick={handleGenerate} className="gradient-shopify px-12" size="lg">
+        <Button onClick={handleGenerate} className="gradient-shopify text-foreground px-12" size="lg">
           Generate Favicon
         </Button>
       </div>

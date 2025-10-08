@@ -48,15 +48,19 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <Facebook className="w-4 h-4 flex-shrink-0" />
-                <a href="#" className="hover:text-accent transition-smooth">Facebook OmegaTheme</a>
+                <a href="https://www.facebook.com/OmegaTheme/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-smooth">Facebook OmegaTheme</a>
               </li>
               <li className="flex items-center gap-2">
                 <Youtube className="w-4 h-4 flex-shrink-0" />
-                <a href="#" className="hover:text-accent transition-smooth">Youtube OmegaTheme</a>
+                <a href="https://www.youtube.com/c/OmegaTheme" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-smooth">Youtube OmegaTheme</a>
               </li>
               <li className="flex items-center gap-2">
                 <MessageCircle className="w-4 h-4 flex-shrink-0" />
-                <a href="#" className="hover:text-accent transition-smooth">Wechat OmegaTheme</a>
+                <a href="https://www.omegatheme.com/images/Blog%20Shopify/Wechat%20Omegatheme.jpg" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-smooth">Wechat OmegaTheme</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <MapPin className="w-4 h-4 flex-shrink-0" />
+                <a href="https://www.google.com/maps/place/Omegatheme/@21.0124475,105.8161486,17z/data=!3m1!4b1!4m5!3m4!1s0x3135ab7d3b90389f:0xaf08ce3a64a1f901!8m2!3d21.0124475!4d105.8183373" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-smooth">View on Google Maps</a>
               </li>
             </ul>
           </div>
