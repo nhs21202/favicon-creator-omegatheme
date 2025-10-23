@@ -29,7 +29,17 @@ export const TextGenerator = ({ onGenerate }: TextGeneratorProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    generateFavicon();
+    // Load font before generating
+    const loadFontAndGenerate = async () => {
+      try {
+        await document.fonts.load(`bold ${fontSize}px "${fontFamily}"`);
+        generateFavicon();
+      } catch (error) {
+        // If font loading fails, still try to generate
+        generateFavicon();
+      }
+    };
+    loadFontAndGenerate();
   }, [text, fontColor, backgroundColor, fontFamily, fontSize, backgroundShape]);
 
   const generateFavicon = () => {
@@ -64,7 +74,7 @@ export const TextGenerator = ({ onGenerate }: TextGeneratorProps) => {
 
     // Draw text
     ctx.fillStyle = fontColor;
-    ctx.font = `bold ${fontSize}px ${fontFamily}`;
+    ctx.font = `bold ${fontSize}px "${fontFamily}", sans-serif`;
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillText(text.slice(0, 3), size / 2, size / 2);
